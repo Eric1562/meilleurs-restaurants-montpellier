@@ -45,6 +45,28 @@
         .subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .language-selector-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        
+        .language-label {
+            color: white;
+            margin-right: 0.5rem;
+        }
+        
+        #language-selector {
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            border: none;
+            background-color: var(--white);
+            color: var(--text);
+            cursor: pointer;
         }
         
         .container {
@@ -165,181 +187,191 @@
             }
         }
     </style>
+    <script src="js/translations.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Les 10 Meilleurs Restaurants de Montpellier</h1>
-        <p class="subtitle">Une sélection des meilleures tables selon les avis Google</p>
+        <h1 data-i18n="page-title">Les 10 Meilleurs Restaurants de Montpellier</h1>
+        <p class="subtitle" data-i18n="page-subtitle">Une sélection des meilleures tables selon les avis Google</p>
+        
+        <div class="language-selector-container">
+            <label for="language-selector" class="language-label" data-i18n="lang-select">Choisir la langue</label>
+            <select id="language-selector">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+            </select>
+        </div>
     </header>
     
     <div class="container">
         <div class="restaurant-grid">
             <!-- Restaurant 1 -->
-            <div class="restaurant-card">
-                <div class="restaurant-image" style="background-color: #f8d7da;" data-cuisine="Crêperie"></div>
+            <div id="restaurant1" class="restaurant-card">
+                <div class="restaurant-image" style="background-color: #f8d7da;" data-cuisine-key="rest1-cuisine" data-cuisine="Crêperie"></div>
                 <div class="restaurant-content">
-                    <h2 class="restaurant-title">Les Casseroles en Folie</h2>
+                    <h2 class="restaurant-title" data-i18n="rest1-name">Les Casseroles en Folie</h2>
                     <div class="restaurant-info">
                         <p class="cuisine">Crêperie</p>
                         <p class="rating"><span class="stars">★★★★★</span> 4.8/5</p>
                     </div>
-                    <p class="address">5 Place de la Chapelle Neuve, 34000 Montpellier</p>
+                    <p class="address" data-i18n="rest1-address">5 Place de la Chapelle Neuve, 34000 Montpellier</p>
                     <div class="review">
-                        <p>"Accueil toujours aussi agréable ! Gentillesse, disponibilité, humour, professionnalisme au TOP !!! C'est LA crêperie de Montpellier !"</p>
-                        <p class="review-author">- Via Pages Jaunes</p>
+                        <p data-i18n="rest1-review">"Accueil toujours aussi agréable ! Gentillesse, disponibilité, humour, professionnalisme au TOP !!! C'est LA crêperie de Montpellier !"</p>
+                        <p class="review-author" data-i18n="rest1-author">- Via Pages Jaunes</p>
                     </div>
                 </div>
             </div>
             
             <!-- Restaurant 2 -->
-            <div class="restaurant-card">
-                <div class="restaurant-image" style="background-color: #d7f8e0;" data-cuisine="Italien"></div>
+            <div id="restaurant2" class="restaurant-card">
+                <div class="restaurant-image" style="background-color: #d7f8e0;" data-cuisine-key="rest2-cuisine" data-cuisine="Italien"></div>
                 <div class="restaurant-content">
-                    <h2 class="restaurant-title">La Nonna</h2>
+                    <h2 class="restaurant-title" data-i18n="rest2-name">La Nonna</h2>
                     <div class="restaurant-info">
                         <p class="cuisine">Italien</p>
                         <p class="rating"><span class="stars">★★★★★</span> 5.0/5</p>
                     </div>
-                    <p class="address">5 Rue de Lépante, 34000 Montpellier</p>
+                    <p class="address" data-i18n="rest2-address">5 Rue de Lépante, 34000 Montpellier</p>
                     <div class="review">
-                        <p>"Un des meilleurs restaurants italiens de Montpellier. Les pâtes sont fraîches et délicieuses, et le service est excellent. Une adresse incontournable pour les amateurs de cuisine italienne authentique."</p>
-                        <p class="review-author">- Via Tripadvisor</p>
+                        <p data-i18n="rest2-review">"Un des meilleurs restaurants italiens de Montpellier. Les pâtes sont fraîches et délicieuses, et le service est excellent. Une adresse incontournable pour les amateurs de cuisine italienne authentique."</p>
+                        <p class="review-author" data-i18n="rest2-author">- Via Tripadvisor</p>
                     </div>
                 </div>
             </div>
             
             <!-- Restaurant 3 -->
-            <div class="restaurant-card">
-                <div class="restaurant-image" style="background-color: #f8e9d7;" data-cuisine="Café-Restaurant"></div>
+            <div id="restaurant3" class="restaurant-card">
+                <div class="restaurant-image" style="background-color: #f8e9d7;" data-cuisine-key="rest3-cuisine" data-cuisine="Café-Restaurant"></div>
                 <div class="restaurant-content">
-                    <h2 class="restaurant-title">Ohana Cafe</h2>
+                    <h2 class="restaurant-title" data-i18n="rest3-name">Ohana Cafe</h2>
                     <div class="restaurant-info">
                         <p class="cuisine">Café-Restaurant</p>
                         <p class="rating"><span class="stars">★★★★★</span> 9.7/10</p>
                     </div>
-                    <p class="address">15 Rue Four des Flammes, 34000 Montpellier</p>
+                    <p class="address" data-i18n="rest3-address">15 Rue Four des Flammes, 34000 Montpellier</p>
                     <div class="review">
-                        <p>"Un lieu chaleureux avec des produits frais et de qualité. Le personnel est adorable et les plats sont préparés avec soin. Un vrai coup de cœur à Montpellier!"</p>
-                        <p class="review-author">- Via TheFork</p>
+                        <p data-i18n="rest3-review">"Un lieu chaleureux avec des produits frais et de qualité. Le personnel est adorable et les plats sont préparés avec soin. Un vrai coup de cœur à Montpellier!"</p>
+                        <p class="review-author" data-i18n="rest3-author">- Via TheFork</p>
                     </div>
                 </div>
             </div>
             
             <!-- Restaurant 4 -->
-            <div class="restaurant-card">
-                <div class="restaurant-image" style="background-color: #d7e4f8;" data-cuisine="Fusion"></div>
+            <div id="restaurant4" class="restaurant-card">
+                <div class="restaurant-image" style="background-color: #d7e4f8;" data-cuisine-key="rest4-cuisine" data-cuisine="Fusion"></div>
                 <div class="restaurant-content">
-                    <h2 class="restaurant-title">Terminal #1</h2>
+                    <h2 class="restaurant-title" data-i18n="rest4-name">Terminal #1</h2>
                     <div class="restaurant-info">
                         <p class="cuisine">Fusion</p>
                         <p class="rating"><span class="stars">★★★★☆</span> 4.5/5</p>
                     </div>
-                    <p class="address">1 Quai du Pirée, 34000 Montpellier</p>
+                    <p class="address" data-i18n="rest4-address">1 Quai du Pirée, 34000 Montpellier</p>
                     <div class="review">
-                        <p>"Des plats de qualité, un restaurant bien décoré dans une belle bâtisse. Le personnel est très professionnel, mais dans l'ambiance décontractée typique de Montpellier. Les plats sont copieux et les saveurs justes, c'est un régal."</p>
-                        <p class="review-author">- Via TheFork</p>
+                        <p data-i18n="rest4-review">"Des plats de qualité, un restaurant bien décoré dans une belle bâtisse. Le personnel est très professionnel, mais dans l'ambiance décontractée typique de Montpellier. Les plats sont copieux et les saveurs justes, c'est un régal."</p>
+                        <p class="review-author" data-i18n="rest4-author">- Via TheFork</p>
                     </div>
                 </div>
             </div>
             
             <!-- Restaurant 5 -->
-            <div class="restaurant-card">
-                <div class="restaurant-image" style="background-color: #e1d7f8;" data-cuisine="Gastronomique"></div>
+            <div id="restaurant5" class="restaurant-card">
+                <div class="restaurant-image" style="background-color: #e1d7f8;" data-cuisine-key="rest5-cuisine" data-cuisine="Gastronomique"></div>
                 <div class="restaurant-content">
-                    <h2 class="restaurant-title">Anga</h2>
+                    <h2 class="restaurant-title" data-i18n="rest5-name">Anga</h2>
                     <div class="restaurant-info">
                         <p class="cuisine">Gastronomique</p>
                         <p class="rating"><span class="stars">★★★★★</span> 4.5/5</p>
                     </div>
-                    <p class="address">10 Rue Saint-Firmin, 34000 Montpellier</p>
+                    <p class="address" data-i18n="rest5-address">10 Rue Saint-Firmin, 34000 Montpellier</p>
                     <div class="review">
-                        <p>"La nourriture et le service étaient exceptionnels. C'était définitivement le meilleur restaurant dans lequel nous avons mangé à Montpellier. Le concept peut ne pas être au goût de tout le monde - on a presque l'impression d'aller dîner chez quelqu'un - mais pour nous, c'était parfait."</p>
-                        <p class="review-author">- Via Tripadvisor</p>
+                        <p data-i18n="rest5-review">"La nourriture et le service étaient exceptionnels. C'était définitivement le meilleur restaurant dans lequel nous avons mangé à Montpellier. Le concept peut ne pas être au goût de tout le monde - on a presque l'impression d'aller dîner chez quelqu'un - mais pour nous, c'était parfait."</p>
+                        <p class="review-author" data-i18n="rest5-author">- Via Tripadvisor</p>
                     </div>
                 </div>
             </div>
             
             <!-- Restaurant 6 -->
-            <div class="restaurant-card">
-                <div class="restaurant-image" style="background-color: #d7f8f5;" data-cuisine="Bistrot"></div>
+            <div id="restaurant6" class="restaurant-card">
+                <div class="restaurant-image" style="background-color: #d7f8f5;" data-cuisine-key="rest6-cuisine" data-cuisine="Bistrot"></div>
                 <div class="restaurant-content">
-                    <h2 class="restaurant-title">Le Bistro Urbain</h2>
+                    <h2 class="restaurant-title" data-i18n="rest6-name">Le Bistro Urbain</h2>
                     <div class="restaurant-info">
                         <p class="cuisine">Bistrot</p>
                         <p class="rating"><span class="stars">★★★★☆</span> 4.5/5</p>
                     </div>
-                    <p class="address">11 Rue du Plan d'Agde, 34000 Montpellier</p>
+                    <p class="address" data-i18n="rest6-address">11 Rue du Plan d'Agde, 34000 Montpellier</p>
                     <div class="review">
-                        <p>"Une cuisine raffinée, des produits frais et locaux, dans un cadre convivial. Ce bistrot moderne offre une expérience culinaire de qualité avec un excellent rapport qualité-prix."</p>
-                        <p class="review-author">- Via Tripadvisor</p>
+                        <p data-i18n="rest6-review">"Une cuisine raffinée, des produits frais et locaux, dans un cadre convivial. Ce bistrot moderne offre une expérience culinaire de qualité avec un excellent rapport qualité-prix."</p>
+                        <p class="review-author" data-i18n="rest6-author">- Via Tripadvisor</p>
                     </div>
                 </div>
             </div>
             
             <!-- Restaurant 7 -->
-            <div class="restaurant-card">
-                <div class="restaurant-image" style="background-color: #f8d7f2;" data-cuisine="Français"></div>
+            <div id="restaurant7" class="restaurant-card">
+                <div class="restaurant-image" style="background-color: #f8d7f2;" data-cuisine-key="rest7-cuisine" data-cuisine="Français"></div>
                 <div class="restaurant-content">
-                    <h2 class="restaurant-title">Pastis Restaurant</h2>
+                    <h2 class="restaurant-title" data-i18n="rest7-name">Pastis Restaurant</h2>
                     <div class="restaurant-info">
                         <p class="cuisine">Français</p>
                         <p class="rating"><span class="stars">★★★★☆</span> 4.5/5</p>
                     </div>
-                    <p class="address">2 Rue de la Fontaine, 34000 Montpellier</p>
+                    <p class="address" data-i18n="rest7-address">2 Rue de la Fontaine, 34000 Montpellier</p>
                     <div class="review">
-                        <p>"Le restaurant est impeccablement propre, le service parfait et la nourriture délicieuse. Vous choisissez combien de plats vous voulez et ils vous apportent la nourriture - absolument délicieux."</p>
-                        <p class="review-author">- Via Tripadvisor</p>
+                        <p data-i18n="rest7-review">"Le restaurant est impeccablement propre, le service parfait et la nourriture délicieuse. Vous choisissez combien de plats vous voulez et ils vous apportent la nourriture - absolument délicieux."</p>
+                        <p class="review-author" data-i18n="rest7-author">- Via Tripadvisor</p>
                     </div>
                 </div>
             </div>
             
             <!-- Restaurant 8 -->
-            <div class="restaurant-card">
-                <div class="restaurant-image" style="background-color: #e0f8d7;" data-cuisine="Gastronomique"></div>
+            <div id="restaurant8" class="restaurant-card">
+                <div class="restaurant-image" style="background-color: #e0f8d7;" data-cuisine-key="rest8-cuisine" data-cuisine="Gastronomique"></div>
                 <div class="restaurant-content">
-                    <h2 class="restaurant-title">La Diligence</h2>
+                    <h2 class="restaurant-title" data-i18n="rest8-name">La Diligence</h2>
                     <div class="restaurant-info">
                         <p class="cuisine">Gastronomique</p>
                         <p class="rating"><span class="stars">★★★★☆</span> 4.0/5</p>
                     </div>
-                    <p class="address">2 Place Pétrarque, 34000 Montpellier</p>
+                    <p class="address" data-i18n="rest8-address">2 Place Pétrarque, 34000 Montpellier</p>
                     <div class="review">
-                        <p>"Cette excellente adresse montpelliéraine offre une expérience mémorable. Le rapport qualité-prix est très bon dans un cadre d'exception."</p>
-                        <p class="review-author">- Via Gastronomico</p>
+                        <p data-i18n="rest8-review">"Cette excellente adresse montpelliéraine offre une expérience mémorable. Le rapport qualité-prix est très bon dans un cadre d'exception."</p>
+                        <p class="review-author" data-i18n="rest8-author">- Via Gastronomico</p>
                     </div>
                 </div>
             </div>
             
             <!-- Restaurant 9 -->
-            <div class="restaurant-card">
-                <div class="restaurant-image" style="background-color: #f8f7d7;" data-cuisine="Méditerranéen"></div>
+            <div id="restaurant9" class="restaurant-card">
+                <div class="restaurant-image" style="background-color: #f8f7d7;" data-cuisine-key="rest9-cuisine" data-cuisine="Méditerranéen"></div>
                 <div class="restaurant-content">
-                    <h2 class="restaurant-title">La Manufacture</h2>
+                    <h2 class="restaurant-title" data-i18n="rest9-name">La Manufacture</h2>
                     <div class="restaurant-info">
                         <p class="cuisine">Méditerranéen</p>
                         <p class="rating"><span class="stars">★★★★☆</span> 9.2/10</p>
                     </div>
-                    <p class="address">15 Rue des Trésoriers de la Bourse, 34000 Montpellier</p>
+                    <p class="address" data-i18n="rest9-address">15 Rue des Trésoriers de la Bourse, 34000 Montpellier</p>
                     <div class="review">
-                        <p>"Une cuisine raffinée aux saveurs méditerranéennes, dans un cadre élégant et contemporain. Les plats sont préparés avec des produits frais et de saison, et le service est attentif et chaleureux."</p>
-                        <p class="review-author">- Via TheFork</p>
+                        <p data-i18n="rest9-review">"Une cuisine raffinée aux saveurs méditerranéennes, dans un cadre élégant et contemporain. Les plats sont préparés avec des produits frais et de saison, et le service est attentif et chaleureux."</p>
+                        <p class="review-author" data-i18n="rest9-author">- Via TheFork</p>
                     </div>
                 </div>
             </div>
             
             <!-- Restaurant 10 -->
-            <div class="restaurant-card">
-                <div class="restaurant-image" style="background-color: #ffecb3;" data-cuisine="Italien - Pizzeria"></div>
+            <div id="restaurant10" class="restaurant-card">
+                <div class="restaurant-image" style="background-color: #ffecb3;" data-cuisine-key="rest10-cuisine" data-cuisine="Italien - Pizzeria"></div>
                 <div class="restaurant-content">
-                    <h2 class="restaurant-title">Aroma Pizza & Focaccia</h2>
+                    <h2 class="restaurant-title" data-i18n="rest10-name">Aroma Pizza & Focaccia</h2>
                     <div class="restaurant-info">
                         <p class="cuisine">Italien</p>
                         <p class="rating"><span class="stars">★★★★☆</span> 4.6/5</p>
                     </div>
-                    <p class="address">8 Rue du Palais des Guilhem, 34000 Montpellier</p>
+                    <p class="address" data-i18n="rest10-address">8 Rue du Palais des Guilhem, 34000 Montpellier</p>
                     <div class="review">
-                        <p>"Les meilleures pizzas de Montpellier ! Pâte fine et croustillante, ingrédients frais et de qualité, une vraie cuisine italienne authentique. Un endroit chaleureux et convivial qui mérite son succès."</p>
-                        <p class="review-author">- Via Google</p>
+                        <p data-i18n="rest10-review">"Les meilleures pizzas de Montpellier ! Pâte fine et croustillante, ingrédients frais et de qualité, une vraie cuisine italienne authentique. Un endroit chaleureux et convivial qui mérite son succès."</p>
+                        <p class="review-author" data-i18n="rest10-author">- Via Google</p>
                     </div>
                 </div>
             </div>
@@ -347,8 +379,8 @@
     </div>
     
     <footer>
-        <p>Les 10 Meilleurs Restaurants de Montpellier</p>
-        <p class="footer-text">Sélection basée sur les avis Google et autres plateformes de restauration</p>
+        <p data-i18n="page-title">Les 10 Meilleurs Restaurants de Montpellier</p>
+        <p class="footer-text" data-i18n="footer-text">Sélection basée sur les avis Google et autres plateformes de restauration</p>
         <p class="footer-text">Mars 2025</p>
     </footer>
 </body>
